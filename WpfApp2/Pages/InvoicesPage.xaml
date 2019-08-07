@@ -1,0 +1,54 @@
+﻿<Page x:Class="WpfApp2.Pages.InvoicesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="843" d:DesignWidth="1254"
+      Title="RepresentativesPage">
+
+
+        
+
+    <DataGrid
+   
+        AutoGenerateColumns="False"
+        Name="Invoices_Grid"
+        ItemsSource="{Binding}"
+        FontSize="22"
+        Opacity="0.9"
+        CanUserDeleteRows="False"
+        CanUserReorderColumns="False"
+        CanUserResizeColumns="False"
+        CanUserResizeRows="False"
+        CanUserAddRows="False"
+        IsReadOnly="True"
+        
+        >
+        
+        <DataGrid.Columns>
+            <DataGridTextColumn Width="150" Header="Nazwa" Binding="{Binding invoice}"
+              >
+                
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="210" Header="Wartość NETTO" Binding="{Binding netAmount}">
+                
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="230" Header="Wartość BRUTTO" Binding="{Binding grossAmount}">
+                
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="150" Header="Zarobek" Binding="{Binding interest}">
+                
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="130" Header="Procent" Binding="{Binding percent}">
+                
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="282" Header="Data" Binding="{Binding dateOfReturn}">
+               
+            </DataGridTextColumn>
+            
+
+        </DataGrid.Columns>
+    </DataGrid>
+</Page>

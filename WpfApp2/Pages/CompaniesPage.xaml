@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfApp2.CompaniesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="843" d:DesignWidth="1254"
+      Title="CompaniesPage">
+
+
+    <DataGrid
+   
+        AutoGenerateColumns="False"
+        Name="Companies_Grid"
+        ItemsSource="{Binding}"
+        FontSize="22"
+        Opacity="0.9"
+        CanUserDeleteRows="False"
+        CanUserReorderColumns="False"
+        CanUserResizeColumns="False"
+        CanUserResizeRows="False"
+        CanUserAddRows="False"
+        IsReadOnly="True"
+        >
+        <DataGrid.Columns>
+            <DataGridTextColumn Width="250" Header="Nazwa" Binding="{Binding companyName}"/>
+            <DataGridTextColumn Width="130" Header="Nip" Binding="{Binding nip}"/>
+            <DataGridTextColumn Width="200" Header="Kraj" Binding="{Binding country}"/>
+            <DataGridTextColumn Width="180" Header="Miasto" Binding="{Binding city}"/>
+            <DataGridTextColumn Width="310" Header="Adres" Binding="{Binding address}"/>
+            <DataGridTemplateColumn Header="Przedstawiciele" Width="162">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Click="ShowRepresentatives_Click"
+                                Tag="{Binding id}"
+                                Content="Pokaż"
+                                />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Page>

@@ -1,0 +1,32 @@
+﻿<Page x:Class="WpfApp2.Pages.RepresentativesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="843" d:DesignWidth="1254"
+      Title="RepresentativesPage">
+
+    <DataGrid
+   
+        AutoGenerateColumns="False"
+        Name="Representatives_Grid"
+        ItemsSource="{Binding}"
+        FontSize="22"
+        Opacity="0.9"
+        CanUserDeleteRows="False"
+        CanUserReorderColumns="False"
+        CanUserResizeColumns="False"
+        CanUserResizeRows="False"
+        CanUserAddRows="False"
+        IsReadOnly="True"
+        >
+        <DataGrid.Columns>
+            <DataGridTextColumn Width="270" Header="Imie" Binding="{Binding name}"/>
+            <DataGridTextColumn Width="300" Header="Nazwisko" Binding="{Binding surname}"/>
+            <DataGridTextColumn Width="232" Header="Telefon" Binding="{Binding phoneNumber}"/>
+            <DataGridTextColumn Width="430" Header="Email" Binding="{Binding email}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</Page>
